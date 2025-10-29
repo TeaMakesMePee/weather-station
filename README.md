@@ -1,32 +1,69 @@
-# _Sample project_
+# 🌤️ ESP32 IoT Weather Station (ESP-IDF)
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+A simple and elegant **IoT weather station** built using the **ESP32**, **BME280 sensor**, and a **128x64 SSD1306 OLED display** — powered by the **ESP-IDF** framework.  
+It continuously measures **temperature, humidity, and atmospheric pressure**, displaying the data in real-time on the OLED screen.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+---
 
+## 🧩 Hardware Components
 
+| Component | Description |
+|------------|-------------|
+| **ESP32 Dev Board** | Main microcontroller (Wi-Fi + BLE) |
+| **BME280** | Temperature, humidity, and pressure sensor |
+| **SSD1306 OLED (128x64)** | Display module via I²C |
+| **Jumper wires / Breadboard** | For prototyping connections |
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+---
 
-## Example folder contents
+## ⚙️ Features
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+- 🌡️ Real-time weather data (Temperature, Humidity, Pressure)
+- 🖥️ 128x64 OLED display with clean, minimal UI
+- ⚡ Built using the native **ESP-IDF** framework
+- 🧩 Modular structure using ESP-IDF components
+- 🔧 Easy to extend (Wi-Fi, MQTT, or cloud integration)
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
+---
 
-Below is short explanation of remaining files in the project folder.
+## 🪛 Wiring Diagram
 
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+| BME280 Pin | ESP32 Pin |
+|-------------|------------|
+| VCC | 3.3V |
+| GND | GND |
+| SDA | GPIO 21 |
+| SCL | GPIO 22 |
+
+| SSD1306 Pin | ESP32 Pin |
+|--------------|-----------|
+| VCC | 3.3V |
+| GND | GND |
+| SDA | GPIO 21 |
+| SCL | GPIO 22 |
+
+> 📝 You can modify these I²C pins in `menuconfig` or your source code.
+
+---
+
+## 🧠 How It Works
+
+1. The **ESP32** communicates with the **BME280** sensor over I²C to retrieve temperature, humidity, and pressure data.  
+2. The data is formatted and displayed on the **SSD1306 OLED** using the `esp_ssd1306` component.  
+3. The system periodically updates readings, providing live environmental data.
+
+---
+
+## 🧰 Software Setup
+
+### Prerequisites
+- [ESP-IDF v5.x or later](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/)
+- USB connection to ESP32 board
+- `idf.py` toolchain properly installed
+
+---
+
+### 📥 Clone the Repository
+```bash
+git clone https://github.com/<your-username>/weather-station.git
+cd weather-station
