@@ -70,7 +70,7 @@ cd weather-station
 ```
 
 ---
-### Video Demo
+### 🎥 Video Demo
 ```link
 https://youtu.be/iaP69YZrSVg
 ```
