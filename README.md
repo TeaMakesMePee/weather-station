@@ -67,3 +67,10 @@ It continuously measures **temperature, humidity, and atmospheric pressure**, di
 ```bash
 git clone https://github.com/<your-username>/weather-station.git
 cd weather-station
+```
+
+---
+### Video Demo
+```link
+https://youtu.be/iaP69YZrSVg
+```
